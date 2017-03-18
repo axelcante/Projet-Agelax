@@ -36,6 +36,8 @@
 		<Unit filename="Game.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
+		<Unit filename="console.cpp" />
+		<Unit filename="console.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
