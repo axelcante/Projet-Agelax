@@ -2,7 +2,7 @@
 #define PLAYER_H_INCLUDED
 
 ///Player class
-class Player:
+class Player
     {
     private:
         int m_player_number;
@@ -12,7 +12,7 @@ class Player:
         //constructeur par défaut
         Player();
         //constructeur surchargé
-        Player(int m_player_number, bool m_isLost)
+        Player(int m_player_number, bool m_isLost);
         //destructeur
         ~Player();
 
