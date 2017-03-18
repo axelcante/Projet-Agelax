@@ -1,11 +1,13 @@
 # depslib dependency file v1.0
-1489584964 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
+1489868489 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
 	"Game.h"
 
-1489847653 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
+1489868016 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
 	"Player.h"
+	"console.h"
+	"Constantes.h"
 
-1489847677 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
+1489860871 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
 
 1489850489 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.cpp
 	"console.h"
@@ -19,6 +21,15 @@
 	<fstream>
 	<istream>
 
-1489847202 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
+1489855018 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
 	"Player.h"
+
+1489860207 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\constantes.h
+
+1489868086 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\main.cpp
+	<iostream>
+	<windows.h>
+	<vector>
+	"console.h"
+	"Game.h"
 

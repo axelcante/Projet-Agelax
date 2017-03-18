@@ -1,16 +1,16 @@
 #include "Player.h"
 
-//Constructeur par défaut
+//Default constructor
 Player::Player() {}
 
-//Constructeur surchargé
+//Overloaded constructor
 Player::Player(int playerNumber, bool isLost)
 {
     m_isLost = isLost;
     m_player_number = playerNumber;
 }
 
-//Destructeur
+//Destructor
 Player::~Player() {}
 
 //Getters

@@ -9,22 +9,22 @@ class Player
         bool m_isLost;
 
     public:
-        //constructeur par défaut
+        //Default constructor
         Player();
-        //constructeur surchargé
-        Player(int m_player_number, bool m_isLost);
-        //destructeur
+        //Overcharged constructor
+        Player(int player_number, bool isLost);
+        //Destructor
         ~Player();
 
-        //getters
+        //Getters
         int getPlayer_number()const;
         bool getIsLost()const;
 
-        //setters
+        //Setters
         void setPlayerNumber(int player_number);
         void setIsLost(bool isLost);
 
-        //methods
+        ///Methods
 
     };
 

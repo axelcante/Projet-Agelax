@@ -1,0 +1,11 @@
+#ifndef CONSTANTES_H_INCLUDED
+#define CONSTANTES_H_INCLUDED
+
+#define NBLIGNES 15
+#define NBCOLS 15
+#define POSLIGNE 5
+#define POSCOL 10
+#define N_COLONNES 31
+#define N_LIGNES 16
+
+#endif // CONSTANTES_H_INCLUDED
