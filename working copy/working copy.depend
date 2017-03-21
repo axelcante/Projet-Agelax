@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1489868489 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
+1489869125 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
 	"Game.h"
 
 1489868016 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
@@ -7,7 +7,7 @@
 	"console.h"
 	"Constantes.h"
 
-1489860871 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
+1489869348 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
 
 1489850489 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.cpp
 	"console.h"
@@ -33,6 +33,7 @@
 	"console.h"
 	"Game.h"
 
+<<<<<<< HEAD
 1489869434 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.cpp
 	"Game.h"
 
@@ -72,4 +73,10 @@
 
 1489869434 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\console.cpp
 	"console.h"
+=======
+1489869275 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
+	"Boat.h"
+
+1489869275 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+>>>>>>> b50839e5cf4129a28dd1b039f744afad707a0182
 
