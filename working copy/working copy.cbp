@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Battleship.h" />
+		<Unit filename="Boat.cpp" />
+		<Unit filename="Boat.h" />
 		<Unit filename="Constantes.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />

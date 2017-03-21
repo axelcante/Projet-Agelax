@@ -1,12 +1,15 @@
 #ifndef CONSOLE_H_INCLUDED
 #define CONSOLE_H_INCLUDED
 #include <windows.h>
+#include <stdlib.h>
 #include <conio.h>
 #include <iostream>
 #include <limits>
 #include <stdexcept>
 #include <fstream>
 #include <istream>
+
+//Mr Diedler's code, originally for last year's Snoopy project
 
 enum Color
 {
