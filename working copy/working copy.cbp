@@ -35,13 +35,14 @@
 		<Unit filename="Battleship.h" />
 		<Unit filename="Boat.cpp" />
 		<Unit filename="Boat.h" />
+<<<<<<< HEAD
 		<Unit filename="Constantes.h" />
+=======
+>>>>>>> 54edd503c9d985bb9553414825cbc329c4738f8d
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
-		<Unit filename="console.cpp" />
-		<Unit filename="console.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
