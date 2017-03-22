@@ -11,8 +11,12 @@ private:
     int m_length= BATTLESHIP_LENGTH;
 
 public:
+    //Constructor
+    Battleship();
     //Is the boat hit by an enemy shell?
     bool isHit(int pos_i, int pos_j);
+    //Is the boat dead?
+    bool isDead();
 
 
 };

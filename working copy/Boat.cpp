@@ -39,19 +39,19 @@ bool Boat::move_boat(int dir)
     switch(dir)
     {
     case UP:
-        if(m_dir==(UP && DOWN)) { m_pos_j--; return true; } //returns true is all went well
-        else return false; //returns false if the boat is not corectly aligned
+        if(m_dir==(UP || DOWN)) { m_pos_j--; return true; } //returns true is all went well
+        else return false; //returns false if the boat is not corectly aligned with the specified direction
         break;
     case RIGHT:
-        if(m_dir==(RIGHT && LEFT)) { m_pos_i++; return true; }
+        if(m_dir==(RIGHT || LEFT)) { m_pos_i++; return true; }
         else return false;
         break;
     case DOWN:
-        if(m_dir==(UP && DOWN)) { m_pos_j++; return true; }
+        if(m_dir==(UP || DOWN)) { m_pos_j++; return true; }
         else return false;
         break;
     case LEFT:
-        if(m_dir==(RIGHT && LEFT)) { m_pos_i--; return true; }
+        if(m_dir==(RIGHT || LEFT)) { m_pos_i--; return true; }
         else return false;
         break;
     default:
@@ -71,4 +71,6 @@ bool Boat::rotate_boat(int dir)
     }
     else{ return false; } //if the move is useless the return is false
 }
+
+
 

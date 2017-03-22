@@ -14,8 +14,7 @@ public:
     int m_pos_i; //Horizontal position
     int m_pos_j; //Vertical position
     int m_dir;   //Direction the boat is facing
-    int m_hit_count;    //Number of times the boat was hit
-    bool m_isDead;  //Is the boat dead?
+    int m_hit_count; //Number of times the boat was hit
 
     //Default constructor
     Boat();
@@ -40,6 +39,7 @@ public:
     bool move_boat(int dir);
     //Rotates the boat 90 degrees in the specified direction (if possible)
     bool rotate_boat(int dir);
+
 
 };
 
