@@ -176,55 +176,16 @@ void Game::displayBoard(Console* conso)
 }
 
 //This method will display all the necessary game information on the right of the game board
-void Game::displayInfo(Console* conso, int player_number, int info_case)
+void Game::displayInfo(Console* conso, int player_number)
 {
-    switch (info_case)
-    {
-    case 1 :
-        conso->gotoLigCol(POSLIGNE*1.5, POSCOL*9);
-        std::cout << "Player " << player_number << "'s turn.";
-        conso->gotoLigCol(POSLIGNE*2, POSCOL*9);
-        std::cout << "Pick an action :";
-        conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
-        std::cout << "1. Fire";
-        conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
-        std::cout << "2. Move a ship";
-        conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
-        break;
-
-    case 2 :
-        conso->gotoLigCol(POSLIGNE*1.5, POSCOL*9);
-        std::cout << "Player " << player_number << "'s turn.";
-        conso->gotoLigCol(POSLIGNE*2, POSCOL*9);
-        std::cout << "Pick an action :";
-        conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
-        std::cout << "1. Fire";
-        conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
-        std::cout << "2. Move a ship";
-        break;
-
-    case 3 :
-        conso->gotoLigCol(POSLIGNE*1.5, POSCOL*9);
-        std::cout << "Player " << player_number << "'s turn.";
-        conso->gotoLigCol(POSLIGNE*2, POSCOL*9);
-        std::cout << "Pick an action :";
-        conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
-        std::cout << "1. Fire";
-        conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
-        std::cout << "2. Move a ship";
-        break;
-
-    case 4 :
-        conso->gotoLigCol(POSLIGNE*1.5, POSCOL*9);
-        std::cout << "Player " << player_number << "'s turn.";
-        conso->gotoLigCol(POSLIGNE*2, POSCOL*9);
-        std::cout << "Pick an action :";
-        conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
-        std::cout << "1. Fire";
-        conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
-        std::cout << "2. Move a ship";
-        break;
-    }
+    conso->gotoLigCol(POSLIGNE*1.5, POSCOL*9);
+    std::cout << "Player " << player_number << "'s turn.";
+    conso->gotoLigCol(POSLIGNE*2, POSCOL*9);
+    std::cout << "Pick an action :";
+    conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
+    std::cout << "1. Fire";
+    conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
+    std::cout << "2. Move a ship";
 }
 
 //Method partly inspired by last year's Snoopy project - Axel CANTE / Juliette HEUANGTHEP
@@ -408,7 +369,10 @@ void Game::playGame(Console* conso) //Function that will play the game
             if(player_number == 1) player_number = 2;
             else player_number = 1;
             displayBoard(conso);
-            displayInfo(conso, player_number, info_case);
+            displayInfo(conso, player_number);
+            conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+            std::cout << "           ";
+            conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
             std::cin >> command;
             if(command == "quit")
             {
@@ -472,7 +436,10 @@ void Game::playerCommand(Console* conso, Player player, std::string command)
     int command2 = 0;
     command1 = convert(command[0]);
     command2 = convert(command[1]);
-    m_board_game[command1][command2] = 219;
+    system("cls");
+    std::cout << command1 << command2;
+    system("pause");
+    m_board_game[command2][command1] = 219;
     displayBoard(conso);
 }
 

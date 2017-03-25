@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1490442722 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
+1490455169 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
 	"Game.h"
 	<string.h>
 
-1490439885 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
+1490455156 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
 	"Player.h"
 	"console.h"
 	"Constantes.h"
@@ -83,21 +83,33 @@
 
 1489869434 "
 
+<<<<<<< HEAD
 1489869275 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
 	"Boat.h"
 	"Boat.h"
 
 1489869275 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+=======
+1490447210 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
+	"Boat.h"
+
+1490447210 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+>>>>>>> c38fa44eda19098c20d67a75a5b0539f3f49b6bb
 	"Constantes.h"
+	<vector>
 
 1489869275 839e5cf4129a28dd1b039f744afad707a0182
 
-1490130881 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.cpp
+1490447210 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.cpp
 	"Battleship.h"
 
-1490130881 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.h
+1490447210 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.h
 	"Constantes.h"
 	"Boat.h"
+<<<<<<< HEAD
+=======
+	<vector>
+>>>>>>> c38fa44eda19098c20d67a75a5b0539f3f49b6bb
 
 1490130881 s.h"
 
@@ -108,6 +120,7 @@
 	"Constantes.h"
 	"Boat.h"
 	<vector>
+<<<<<<< HEAD
 
 1490464087 source:c:\users\aghenry\documents\projet-agelax\working copy\battleship.cpp
 	"Battleship.h"
@@ -163,4 +176,6 @@
 
 1490457499 source:c:\users\aghenry\documents\projet-agelax\working copy\player.cpp
 	"Player.h"
+=======
+>>>>>>> c38fa44eda19098c20d67a75a5b0539f3f49b6bb
 
