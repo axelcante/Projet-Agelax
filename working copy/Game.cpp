@@ -3,7 +3,7 @@
 
 //Default constructor
 Game::Game() {}
-
+//Destructor
 Game::~Game() {}
 
 void Game::initializeBoard()
@@ -13,13 +13,14 @@ void Game::initializeBoard()
         for (int j = 0; j < NBCOLS; j++)
         {
             m_board_player[i][j] = ' ';
-            m_board_game[i][j] = ' ';
+            m_player_1.setShotsFired(i, j, ' ');
+            m_player_2.setShotsFired(i, j, ' ');
         }
     }
 }
 
 //Method partly inspired by last year's Snoopy project - Axel CANTE / Juliette HEUANGTHEP
-void Game::displayBoard(Console* conso)
+void Game::displayBoard(Console* conso, Player player)
 {
     conso->setColor(COLOR_DEFAULT);
     int lines = 0;
@@ -75,7 +76,7 @@ void Game::displayBoard(Console* conso)
     conso->gotoLigCol(POSLIGNE-1, POSCOL+29);
     std::cout << 'O';
 
-    //Display the game array
+    //Display the player's previous shots fired array
     lines = 0;
     conso->gotoLigCol(POSLIGNE, POSCOL*5);
     for (int i = 0; i < NBLIGNES; i++)
@@ -83,7 +84,7 @@ void Game::displayBoard(Console* conso)
         for (int j = 0; j < NBCOLS; j++)
         {
             std::cout << '|';
-            std::cout << m_board_game[i][j];
+            std::cout << player.getShotsFired(i, j);
         }
         std::cout << '|';
         lines++;
@@ -126,50 +127,7 @@ void Game::displayBoard(Console* conso)
     std::cout << 'N';
     conso->gotoLigCol(POSLIGNE-1, POSCOL*5+29);
     std::cout << 'O';
-
     conso->gotoLigCol(POSLIGNE+30, POSCOL);
-
-//    //Drawing the board outline
-//    char horizontal=205,vertical=186;
-//    char C_right_top=187,C_right_bottom=188;
-//    char C_left_top=201,C_left_bottom=200;
-//    int shift = 0;
-//
-//    conso->gotoLigCol(POSLIGNE-2, POSCOL-1);
-//    conso->setColor(COLOR_WHITE);
-//    for (int i = 0; i < N_COLONNES; i ++)
-//    {
-//        std::cout << horizontal;
-//    }
-//    conso->gotoLigCol(POSLIGNE+N_LIGNES-1, POSCOL-1);
-//    for (int i = 0; i < N_COLONNES; i++)
-//    {
-//        std::cout << horizontal;
-//    }
-//    for (int i = 0; i < N_LIGNES; i++)
-//    {
-//        conso->gotoLigCol(POSLIGNE+shift-1, POSCOL-2);
-//        std::cout << vertical;
-//        shift++;
-//    }
-//    shift = 0;
-//    for (int i = 0; i < N_LIGNES; i++)
-//    {
-//        conso->gotoLigCol(POSLIGNE+shift-1, POSCOL+N_COLONNES-1);
-//        std::cout << vertical;
-//        shift++;
-//    }
-//
-//    //Outline corners
-//    conso->gotoLigCol(POSLIGNE-2, POSCOL-2);
-//    std::cout << C_left_top;
-//    conso->gotoLigCol(POSLIGNE-2, POSCOL+N_COLONNES-1);
-//    std::cout << C_right_top;
-//    conso->gotoLigCol(POSLIGNE+N_LIGNES-1, POSCOL-2);
-//    std::cout << C_left_bottom;
-//    conso->gotoLigCol(POSLIGNE+N_LIGNES-1, POSCOL+N_COLONNES-1);
-//    std::cout << C_right_bottom;
-//    conso->setColor(COLOR_DEFAULT);
 }
 
 //This method will display all the necessary game information on the right of the game board
@@ -296,6 +254,7 @@ void Game::displayTutorial(Console* conso)
 //Method partly inspired by last year's Snoopy Project - Axel CANTE / Juliette HEUANGTHEP
 void Game::playMenu(Console* conso)
 {
+    initializeBoard();
     int menu_choice = 1;
     bool quit_game = false; //Bool that will decide whether or not to quit the game
     displayMenu(conso);
@@ -312,7 +271,7 @@ void Game::playMenu(Console* conso)
                 if(menu_choice == 5) menu_choice = 4; //make sure the player choice stays between 1 and 3
                 styleMenu(menu_choice, conso);
             }
-            if(key == 122)
+            if(key == 122 || key == 119)
             {
                 menu_choice--;
                 if(menu_choice == 0) menu_choice = 1;
@@ -354,34 +313,76 @@ void Game::playGame(Console* conso) //Function that will play the game
     int player_number = 2;
     int info_case = 1;
     std::string command;
+    char command_char;
+    int command_int;
     bool quit = false;
     bool endturn = true;
-    initializeBoard();
 
     while(!quit)
     {
         if(endturn)
         {
+            system("cls");
             endturn = false;
+
+            //Changement de joueur
             if(player_number == 1) player_number = 2;
                 else player_number = 1;
-            displayBoard(conso);
+
+            //Afficher le joueur correspondant
+            if(player_number == 1) displayBoard(conso, m_player_1);
+                else displayBoard(conso, m_player_2);
+
+//            conso->gotoLigCol(POSLIGNE+20, POSCOL);
+//            std::cout << "caca" << m_player_1.m_shots_fired[0][0] << "caca";
+
             displayInfo(conso, player_number);
             conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
             std::cout << "           ";
             conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
             std::cin >> command;
+
             if(command == "quit")
             {
                 quit = true;
                 system("cls");
                 displayMenu(conso);
                 styleMenu(1, conso);
-            } else
+            } else if(command == "2")
             {
+                conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
+                std::cout << "                 ";
+                conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
+                std::cout << "2. Move a ship";
+                //move a boat
+            } else if(command == "1")
+            {
+                conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
+                std::cout << "1. Fire";
+                conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
+                std::cout << "Select a letter first.";
+                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+                std::cout << "                     ";
+                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+                std::cin >> command_char;
+                conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
+                std::cout << "Select a number next.";
+                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.4);
+                std::cin >> command_int;
+
                 //this is where the player's command is treated by the game. Once this is done, the turn is passed
-                if(player_number == 1 ) playerCommand(conso, m_player_1, command);
-                    else playerCommand(conso, m_player_2, command);
+//                if(player_number == 1) playerCommand(conso, m_player_1, command_char, command_int);
+//                    else playerCommand(conso, m_player_2, command_char, command_int);
+                if(player_number == 1)
+                {
+                    m_player_1.setShotsFired(command_int-1, convert(command_char), 219);
+                    displayBoard(conso, m_player_1);
+                } else
+                {
+                    m_player_2.setShotsFired(command_int-1, convert(command_char), 219);
+                    displayBoard(conso, m_player_2);
+                }
+                conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
                 endturn = true;
             }
         }
@@ -407,34 +408,14 @@ int Game::convert(char a)
     if(a == 'M' || a == 'm') integer = 12;
     if(a == 'N' || a == 'n') integer = 13;
     if(a == 'O' || a == 'o') integer = 14;
-    if(a == '1') integer = 0;
-    if(a == '2') integer = 1;
-    if(a == '3') integer = 2;
-    if(a == '4') integer = 3;
-    if(a == '5') integer = 4;
-    if(a == '6') integer = 5;
-    if(a == '7') integer = 6;
-    if(a == '8') integer = 7;
-    if(a == '9') integer = 8;
-    if(a == '10') integer = 9;
-    if(a == '11') integer = 10;
-    if(a == '12') integer = 11;
-    if(a == '13') integer = 12;
-    if(a == '14') integer = 13;
-    if(a == '15') integer = 14;
 
     return integer;
 }
 
-void Game::playerCommand(Console* conso, Player player, std::string command)
+void Game::playerCommand(Console* conso, Player player, char command_char, int command_int)
 {
-    int command1 = 0;
-    int command2 = 0;
-    command1 = convert(command[0]);
-    command2 = convert(command[1]);
-    system("cls");
-    std::cout << command1 << command2;
-    system("pause");
-    m_board_game[command2][command1] = 219;
-    displayBoard(conso);
+    int converted_command_char = 0;
+    converted_command_char = convert(command_char);;
+    player.setShotsFired(command_int-1, converted_command_char, 219);
+    displayBoard(conso, player);
 }

@@ -2,7 +2,6 @@
 #define GAME_H_INCLUDED
 #include "Player.h"
 #include "console.h"
-#include "Constantes.h"
 
 ///Game class
 class Game
@@ -12,7 +11,8 @@ public:
     Player m_player_1 = Player(1, false);
     Player m_player_2 = Player(2, false);
     char m_board_player[NBCOLS][NBLIGNES];
-    char m_board_game[NBCOLS][NBLIGNES];
+//    char m_board_game_1[NBCOLS][NBLIGNES];
+//    char m_board_game_1[NBCOLS][NBLIGNES];
 
     //Default constructor
     Game();
@@ -35,14 +35,14 @@ public:
     //Method that will intialize the board (empty)
     void initializeBoard();
     //Method that will display and update the game board depending on the player and actions taken before (movements, shots...)
-    void displayBoard(Console* conso);
+    void displayBoard(Console* conso, Player player);
     //Method that will display current player information on the side of the game board
     void displayInfo(Console* conso, int player_number);
 
     //Method that will convert a char into a relevant int
     int convert(char a);
     //Method that will recieve the player's command and treat it accordingly
-    void playerCommand(Console* conso, Player player, std::string command);
+    void playerCommand(Console* conso, Player player, char command_char, int command_int);
 };
 
 #endif // GAME_H_INCLUDED
