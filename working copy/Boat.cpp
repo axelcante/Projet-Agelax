@@ -142,7 +142,7 @@ bool Boat::isHit(int pos_i, int pos_j)
             for(int i=0; i<m_length; i++)
             {
                 //Only i varies
-                if(pos_j== m_pos_j && pos_i== m_pos_i-i)
+                if(pos_j== m_pos_j & pos_i== m_pos_i-i)
                 {
                     //If the boat is not already hit on that spot
                     if(!m_hit_map[i])

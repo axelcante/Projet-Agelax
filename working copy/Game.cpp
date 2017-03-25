@@ -1,5 +1,8 @@
 #include "Game.h"
+#include "Battleship.h"
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 //Default constructor
 Game::Game() {}
@@ -403,7 +406,7 @@ void Game::playGame(Console* conso) //Function that will play the game
         {
             endturn = false;
             if(player_number == 1) player_number = 2;
-                else player_number = 1;
+            else player_number = 1;
             displayBoard(conso);
             displayInfo(conso, player_number, info_case);
             std::cin >> command;
@@ -413,11 +416,12 @@ void Game::playGame(Console* conso) //Function that will play the game
                 system("cls");
                 displayMenu(conso);
                 styleMenu(1, conso);
-            } else
+            }
+            else
             {
                 //this is where the player's command is treated by the game. Once this is done, the turn is passed
                 if(player_number == 1 ) playerCommand(conso, m_player_1, command);
-                    else playerCommand(conso, m_player_2, command);
+                else playerCommand(conso, m_player_2, command);
                 endturn = true;
             }
         }
@@ -471,3 +475,152 @@ void Game::playerCommand(Console* conso, Player player, std::string command)
     m_board_game[command1][command2] = 219;
     displayBoard(conso);
 }
+
+void Game::InitalizeBoat(Console* conso, Player player)
+{
+    srand(time(NULL)); //Iniialize random function
+
+    bool pos_correct=false;
+    int pos_x;
+    int pos_y;
+    int m_dir;
+
+    while (!pos_correct)///Tant que les positions ne sont pas valides
+    {
+        /// Generer des positions aléatoires
+
+        pos_x =(rand()%NBCOLS+1);
+        pos_y =(rand()%NBLIGNES+1);
+        m_dir =(rand()%4+1);
+        int pos_correct2;
+
+        switch(m_dir)
+        {
+        case UP:
+            for(int i=0; i<BATTLESHIP_LENGTH; i++) ///Parcours du bateau
+            {
+                for (int j = 0; j < m_player_1.m_boats.size(); j++) ///Parcours du vecteur de bateau
+                {
+                    if(m_player_1.m_boats[j].isOnThatSpot(pos_x,pos_y-i))///si il y a un bateau a cette case
+                    {
+                        pos_correct=false; ///position non valide -> recommencer la boucle
+                        pos_correct2=0;
+                        break; ///sortir du case
+                    }
+
+                }
+                if (!pos_correct)
+                {
+                    break;
+                }
+
+            }
+            if (pos_correct2==0)
+            {
+                break;
+            }
+            else
+            {
+                pos_correct=true;
+            }
+
+            break;
+
+             case DOWN:
+            for(int i=0; i<BATTLESHIP_LENGTH; i++) ///Parcours du bateau
+            {
+                for (int j = 0; j < m_player_1.m_boats.size(); j++) ///Parcours du vecteur de bateau
+                {
+                    if(m_player_1.m_boats[j].isOnThatSpot(pos_x,pos_y+i))///si il y a un bateau a cette case
+                    {
+                        pos_correct=false; ///position non valide -> recommencer la boucle
+                        pos_correct2=0;
+                        break; ///sortir du case
+                    }
+
+                }
+                if (!pos_correct)
+                {
+                    break;
+                }
+
+            }
+            if (pos_correct2==0)
+            {
+                break;
+            }
+            else
+            {
+                pos_correct=true;
+            }
+
+            break;
+
+             case RIGHT:
+            for(int i=0; i<BATTLESHIP_LENGTH; i++) ///Parcours du bateau
+            {
+                for (int j = 0; j < m_player_1.m_boats.size(); j++) ///Parcours du vecteur de bateau
+                {
+                    if(m_player_1.m_boats[j].isOnThatSpot(pos_x+i,pos_y))///si il y a un bateau a cette case
+                    {
+                        pos_correct=false; ///position non valide -> recommencer la boucle
+                        pos_correct2=0;
+                        break; ///sortir du case
+                    }
+
+                }
+                if (!pos_correct)
+                {
+                    break;
+                }
+
+            }
+            if (pos_correct2==0)
+            {
+                break;
+            }
+            else
+            {
+                pos_correct=true;
+            }
+
+            break;
+
+             case LEFT:
+            for(int i=0; i<BATTLESHIP_LENGTH; i++) ///Parcours du bateau
+            {
+                for (int j = 0; j < m_player_1.m_boats.size(); j++) ///Parcours du vecteur de bateau
+                {
+                    if(m_player_1.m_boats[j].isOnThatSpot(pos_x-i,pos_y))///si il y a un bateau a cette case
+                    {
+                        pos_correct=false; ///position non valide -> recommencer la boucle
+                        pos_correct2=0;
+                        break; ///sortir du case
+                    }
+
+                }
+                if (!pos_correct)
+                {
+                    break;
+                }
+
+            }
+            if (pos_correct2==0)
+            {
+                break;
+            }
+            else
+            {
+                pos_correct=true;
+            }
+
+            break;
+        }
+    }
+        Battleship battleship1 (pos_x,pos_y,m_dir,0,BATTLESHIP_LENGTH);
+
+
+      //  battleship1=Battleship.Boat(pos_x,pos_y,m_dir,7);
+        m_player_1.m_boats.push_back(battleship1);
+    }
+

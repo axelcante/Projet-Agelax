@@ -1,5 +1,6 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
+#include "Boat.h"
 
 ///Player class
 class Player
@@ -10,7 +11,9 @@ class Player
 
     public:
         //Default constructor
-        Player();
+         std::vector<Boat> m_boats;
+
+         Player();
         //Overcharged constructor
         Player(int player_number, bool isLost);
         //Destructor
@@ -21,6 +24,7 @@ class Player
         bool getIsLost()const;
 
         //Setters
+
         void setPlayerNumber(int player_number);
         void setIsLost(bool isLost);
 

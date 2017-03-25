@@ -38,6 +38,8 @@ public:
     void displayBoard(Console* conso);
     //Method that will display current player information on the side of the game board
     void displayInfo(Console* conso, int player_number, int info_case);
+    void InitalizeBoat(Console* conso, Player player);
+
 
     //Method that will convert a char into a relevant int
     int convert(char a);
