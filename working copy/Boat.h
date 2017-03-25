@@ -2,6 +2,7 @@
 #define BOAT_H_INCLUDED
 
 #include "Constantes.h"
+#include <vector>
 
 ///Boat class
 class Boat
@@ -16,10 +17,15 @@ public:
     int m_dir;   //Direction the boat is facing
     int m_hit_count; //Number of times the boat was hit
 
+    ///Transition avec boat
+    int m_length; //The lenght of the boat
+    std::vector<bool> m_hit_map;//Keeps track of where the boat is hit
+    ///
+
     //Default constructor
     Boat();
     //Overloaded constructor
-    Boat(int pos_i, int pos_j, int dir, int hit_count);
+    Boat(int pos_i, int pos_j, int dir, int hit_count, int length);
     //Destructor
     ~Boat();
 
@@ -39,6 +45,14 @@ public:
     bool move_boat(int dir);
     //Rotates the boat 90 degrees in the specified direction (if possible)
     bool rotate_boat(int dir);
+
+    ///Transition avec boat
+    //Is the boat hit by an enemy shell? If yes then set that spot as hit on the hit map
+    bool isHit(int pos_i, int pos_j);
+    //Is the boat on that specified spot? If yes return true (used for conflict testing)
+    bool isOnThatSpot(int pos_i, int pos_j);
+    //Is the boat dead?
+    bool isDead();
 
 
 };
