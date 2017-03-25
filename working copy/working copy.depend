@@ -86,10 +86,11 @@
 
 1489869275 839e5cf4129a28dd1b039f744afad707a0182
 
-1490186659 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.cpp
+1490442301 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.cpp
 	"Battleship.h"
 
-1490186527 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.h
+1490442262 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.h
 	"Constantes.h"
 	"Boat.h"
+	<vector>
 
