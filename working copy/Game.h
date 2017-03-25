@@ -29,13 +29,20 @@ public:
     //Method that will allow the player to navigate the menu and decide which action to take
     void playMenu(Console* conso);
     //Method that will allow players to play Battleships
-    void playGame(); ///For now, not used
+    void playGame(Console* conso); ///For now, not used
 
     ///Methods related to the game board
+    //Method that will intialize the board (empty)
+    void initializeBoard();
     //Method that will display and update the game board depending on the player and actions taken before (movements, shots...)
     void displayBoard(Console* conso);
     //Method that will display current player information on the side of the game board
-    void displayInfo(Console* conso, int player_number);
+    void displayInfo(Console* conso, int player_number, int info_case);
+
+    //Method that will convert a char into a relevant int
+    int convert(char a);
+    //Method that will recieve the player's command and treat it accordingly
+    void playerCommand(Console* conso, Player player, std::string command);
 };
 
 #endif // GAME_H_INCLUDED

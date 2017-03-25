@@ -468,6 +468,9 @@ void Game::playerCommand(Console* conso, Player player, std::string command)
     int command2 = 0;
     command1 = convert(command[0]);
     command2 = convert(command[1]);
-    m_board_game[command1][command2] = 219;
+    m_board_game[command1][command2] == 'Z';
+    system("cls");
+    std::cout << command1 + "et"; std::cout << command2;
+    system("pause");
     displayBoard(conso);
 }

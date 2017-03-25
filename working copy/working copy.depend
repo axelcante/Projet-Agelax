@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1490130616 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
+1490442722 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
 	"Game.h"
+	<string.h>
 
-1490130252 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
+1490439885 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
 	"Player.h"
 	"console.h"
 	"Constantes.h"
 
-1489869348 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
+1490187022 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
 
 1489850489 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.cpp
 	"console.h"
@@ -25,7 +26,7 @@
 1489855018 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
 	"Player.h"
 
-1489860207 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\constantes.h
+1490130881 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\constantes.h
 
 1490127070 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\main.cpp
 	<iostream>
@@ -34,7 +35,8 @@
 	"console.h"
 	"Game.h"
 
-<<<<<<< HEAD
+1490127070 D
+
 1489869434 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.cpp
 	"Game.h"
 
@@ -74,10 +76,21 @@
 
 1489869434 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\console.cpp
 	"console.h"
-=======
-1489869275 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
+
+1489869434 "
+
+1490130881 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
 	"Boat.h"
 
-1489869275 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
->>>>>>> b50839e5cf4129a28dd1b039f744afad707a0182
+1490130881 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+	"Constantes.h"
+
+1489869275 839e5cf4129a28dd1b039f744afad707a0182
+
+1490130881 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.cpp
+	"Battleship.h"
+
+1490130881 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.h
+	"Constantes.h"
+	"Boat.h"
 
