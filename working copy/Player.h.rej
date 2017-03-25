@@ -1,0 +1,9 @@
+diff a/working copy/Player.h b/working copy/Player.h	(rejected hunks)
+@@ -1,6 +1,6 @@
+ #ifndef PLAYER_H_INCLUDED
+ #define PLAYER_H_INCLUDED
+-#include "Constantes.h"
++#include "Boat.h"
+ 
+ ///Player class
+ class Player

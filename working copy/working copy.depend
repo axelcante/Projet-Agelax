@@ -35,9 +35,10 @@
 	"console.h"
 	"Game.h"
 
-1489869434 D
+1490443559 D
+	<vector>
 
-1490469207 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.cpp
+1490470930 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.cpp
 	"Game.h"
 	<string.h>
 
@@ -48,7 +49,7 @@
 	"Player.h"
 	"console.h"
 
-1490469100 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.h
+1490471446 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.h
 	"Constantes.h"
 
 1490130947 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\console.h
@@ -73,7 +74,7 @@
 1490469266 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.cpp
 	"Player.h"
 
-1490443496 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.cpp
+1490470862 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.cpp
 	"Boat.h"
 
 1490443496 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.h
@@ -85,18 +86,14 @@
 
 1489869434 "
 
-<<<<<<< HEAD
-1489869275 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
-	"Boat.h"
-	"Boat.h"
-
-1489869275 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
-=======
 1490447210 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
+	"Boat.h"
+	"Boat.h"
 	"Boat.h"
 
 1490447210 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
->>>>>>> c38fa44eda19098c20d67a75a5b0539f3f49b6bb
+
+1490457499 fa44eda19098c20d67a75a5b0539f3f49b6bb
 	"Constantes.h"
 	<vector>
 
@@ -108,21 +105,16 @@
 1490447210 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.h
 	"Constantes.h"
 	"Boat.h"
-<<<<<<< HEAD
-=======
-	<vector>
->>>>>>> c38fa44eda19098c20d67a75a5b0539f3f49b6bb
 
 1490130881 s.h"
 
-1490443572 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.cpp
+1490470862 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.cpp
 	"Battleship.h"
 
-1490443559 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.h
+1490470862 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.h
 	"Constantes.h"
 	"Boat.h"
 	<vector>
-<<<<<<< HEAD
 
 1490464087 source:c:\users\aghenry\documents\projet-agelax\working copy\battleship.cpp
 	"Battleship.h"
@@ -178,6 +170,6 @@
 
 1490457499 source:c:\users\aghenry\documents\projet-agelax\working copy\player.cpp
 	"Player.h"
-=======
->>>>>>> c38fa44eda19098c20d67a75a5b0539f3f49b6bb
+
+1490457499 
 
