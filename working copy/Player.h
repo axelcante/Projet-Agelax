@@ -1,6 +1,14 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
 #include "Constantes.h"
+#include <time.h>
+#include <stdlib.h>
+#include <vector>
+#include "Boat.h"
+#include "Battleship.h"
+#include "Cruiser.h"
+#include "Destroyer.h"
+#include "Submarine.h"
 
 ///Player class
 class Player
@@ -10,6 +18,9 @@ class Player
         bool m_isLost;
         //Table that keeps in memory each player's shots fired - public because is not important
         char m_shots_fired[NBLIGNES][NBCOLS];
+        //Vector that contains the player's boats
+        std::vector<Boat> m_boats;
+
 
     public:
         //Default constructor
@@ -30,6 +41,8 @@ class Player
         void setShotsFired(int i, int j, char a);
 
         ///Methods
+        //Method that randomly places the boats
+        void initializeBoats();
 
     };
 

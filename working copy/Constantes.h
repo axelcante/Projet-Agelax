@@ -1,6 +1,8 @@
 #ifndef CONSTANTES_H_INCLUDED
 #define CONSTANTES_H_INCLUDED
 
+#include <iostream>
+
 #define NBLIGNES 15
 #define NBCOLS 15
 #define POSLIGNE 5

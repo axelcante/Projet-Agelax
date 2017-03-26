@@ -25,6 +25,7 @@ void Boat::set_dir(int dir) { m_dir = dir; }
 int Boat::get_pos_i() { return m_pos_i; }
 int Boat::get_pos_j() { return m_pos_j; }
 int Boat::get_dir() { return m_dir; }
+int Boat::get_length() { return m_length; }
 
 //Add one to the hit counter
 void Boat::add_hit()
@@ -142,7 +143,7 @@ bool Boat::isHit(int pos_i, int pos_j)
             for(int i=0; i<m_length; i++)
             {
                 //Only i varies
-                if(pos_j== m_pos_j & pos_i== m_pos_i-i)
+                if(pos_j== m_pos_j && pos_i== m_pos_i-i)
                 {
                     //If the boat is not already hit on that spot
                     if(!m_hit_map[i])

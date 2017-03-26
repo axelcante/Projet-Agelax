@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "console.h"
 
+
 ///Game class
 class Game
 {
@@ -38,9 +39,9 @@ public:
     void displayBoard(Console* conso, Player player);
     //Method that will display current player information on the side of the game board
     void displayInfo(Console* conso, int player_number);
-
     //Method that will convert a char into a relevant int
     int convert(char a);
+
     ///Method unused for the moment
     //Method that will recieve the player's command and treat it accordingly
 //    void playerCommand(Console* conso, Player player, char command_char, int command_int);

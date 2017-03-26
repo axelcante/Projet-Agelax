@@ -441,6 +441,9 @@ int Game::convert(char a)
     return integer;
 }
 
+
+
+
 ///Method unused for the moment
 //void Game::playerCommand(Console* conso, Player player, char command_char, int command_int)
 //{
