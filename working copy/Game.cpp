@@ -134,9 +134,15 @@ void Game::displayBoard(Console* conso, Player player)
 void Game::displayInfo(Console* conso, int player_number)
 {
     conso->gotoLigCol(POSLIGNE*1.5, POSCOL*9);
-    std::cout << "Player " << player_number << "'s turn.";
+    std::cout << "Player ";
+    conso->setColor(COLOR_PURPLE);
+    std::cout << player_number;
+    conso->setColor(COLOR_DEFAULT);
+    std::cout << "'s turn.";
     conso->gotoLigCol(POSLIGNE*2, POSCOL*9);
+    conso->setColor(COLOR_GREEN);
     std::cout << "Pick an action :";
+    conso->setColor(COLOR_DEFAULT);
     conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
     std::cout << "1. Fire";
     conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
@@ -333,15 +339,20 @@ void Game::playGame(Console* conso) //Function that will play the game
             if(player_number == 1) displayBoard(conso, m_player_1);
                 else displayBoard(conso, m_player_2);
 
-//            conso->gotoLigCol(POSLIGNE+20, POSCOL);
-//            std::cout << "caca" << m_player_1.m_shots_fired[0][0] << "caca";
-
             displayInfo(conso, player_number);
             conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
             std::cout << "           ";
-            conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
-            std::cin >> command;
 
+            //Make sure the player input is not an invalid input
+            do
+            {
+                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+                std::cout << "         ";
+                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+                std::cin >> command;
+            } while((command != "quit") && (command != "1") && (command != "2"));
+
+            //Return to the main menu
             if(command == "quit")
             {
                 quit = true;
@@ -360,15 +371,33 @@ void Game::playGame(Console* conso) //Function that will play the game
                 conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
                 std::cout << "1. Fire";
                 conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
+                conso->setColor(COLOR_YELLOW);
                 std::cout << "Select a letter first.";
+                conso->setColor(COLOR_DEFAULT);
                 conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
                 std::cout << "                     ";
-                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
-                std::cin >> command_char;
+
+                //Make sure the player's targeted column is below O and above A
+                do
+                {
+                    conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+                    std::cout << "        ";
+                    conso->gotoLigCol(POSLIGNE*3, POSCOL*9.2);
+                    std::cin >> command_char;
+                } while((command_char < 'A' || command_char > 'O') && (command_char < 'a' || command_char > 'o'));
+
+                //Make sure the player's targeted line is above 1 and below 15
                 conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
-                std::cout << "Select a number next.";
-                conso->gotoLigCol(POSLIGNE*3, POSCOL*9.4);
-                std::cin >> command_int;
+                conso->setColor(COLOR_RED);
+                std::cout << "Select a number next. ";
+                conso->setColor(COLOR_DEFAULT);
+                do
+                {
+                    conso->gotoLigCol(POSLIGNE*3, POSCOL*9.4);
+                    std::cout << "       ";
+                    conso->gotoLigCol(POSLIGNE*3, POSCOL*9.4);
+                    std::cin >> command_int;
+                } while (command_int < 1 || command_int > 15);
 
                 //this is where the player's command is treated by the game. Once this is done, the turn is passed
 //                if(player_number == 1) playerCommand(conso, m_player_1, command_char, command_int);
@@ -412,10 +441,11 @@ int Game::convert(char a)
     return integer;
 }
 
-void Game::playerCommand(Console* conso, Player player, char command_char, int command_int)
-{
-    int converted_command_char = 0;
-    converted_command_char = convert(command_char);;
-    player.setShotsFired(command_int-1, converted_command_char, 219);
-    displayBoard(conso, player);
-}
+///Method unused for the moment
+//void Game::playerCommand(Console* conso, Player player, char command_char, int command_int)
+//{
+//    int converted_command_char = 0;
+//    converted_command_char = convert(command_char);;
+//    player.setShotsFired(command_int-1, converted_command_char, 219);
+//    displayBoard(conso, player);
+//}

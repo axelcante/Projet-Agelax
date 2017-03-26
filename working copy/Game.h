@@ -41,8 +41,9 @@ public:
 
     //Method that will convert a char into a relevant int
     int convert(char a);
+    ///Method unused for the moment
     //Method that will recieve the player's command and treat it accordingly
-    void playerCommand(Console* conso, Player player, char command_char, int command_int);
+//    void playerCommand(Console* conso, Player player, char command_char, int command_int);
 };
 
 #endif // GAME_H_INCLUDED
