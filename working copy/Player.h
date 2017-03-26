@@ -19,7 +19,6 @@ class Player
         //Table that keeps in memory each player's shots fired - public because is not important
         char m_shots_fired[NBLIGNES][NBCOLS];
         //Vector that contains the player's boats
-        std::vector<Boat> m_boats;
 
 
     public:
@@ -29,6 +28,7 @@ class Player
         Player(int player_number, bool isLost);
         //Destructor
         ~Player();
+        std::vector<Boat> m_boats;
 
         //Getters
         int getPlayer_number()const;

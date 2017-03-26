@@ -6,16 +6,28 @@ Game::Game() {}
 //Destructor
 Game::~Game() {}
 
-void Game::initializeBoard()
+void Game::initializeBoard(bool firstTime)
 {
     for (int i = 0; i < NBLIGNES; i++)
     {
         for (int j = 0; j < NBCOLS; j++)
         {
             m_board_player[i][j] = ' ';
-            m_player_1.setShotsFired(i, j, ' ');
-            m_player_2.setShotsFired(i, j, ' ');
+            if(firstTime)
+            {
+                m_player_1.setShotsFired(i, j, ' ');
+                m_player_2.setShotsFired(i, j, ' ');
+            }
         }
+    }
+}
+
+//Method that will the m_board_player board with the correct ships
+void Game::fillPlayerBoard(Player player)
+{
+    for (int i = 0; i < NUMBER_OF_BOATS; i++)
+    {
+        m_board_player[player.m_boats[i].m_pos_i][player.m_boats[i].m_pos_j] = 'B';
     }
 }
 
@@ -24,6 +36,9 @@ void Game::displayBoard(Console* conso, Player player)
 {
     conso->setColor(COLOR_DEFAULT);
     int lines = 0;
+    initializeBoard(false);
+    ///fill player board with the relevant player's ships here
+    fillPlayerBoard(player);
 
     //Displaying the player screen
     conso->gotoLigCol(POSLIGNE, POSCOL);
@@ -255,12 +270,15 @@ void Game::displayTutorial(Console* conso)
     std::cout << "Each turn, the player will have a number of actions available to him.";
     conso->gotoLigCol(POSLIGNE+12, POSCOL);
     std::cout << "Depending on which ships are available to him : 1. FIRE, 2. MOVE";
+    conso->gotoLigCol(POSLIGNE+14, POSCOL);
+    std::cout << "If the player chooses to FIRE, he will then be asked to input a letter (column) followed by a number (line).";
+    conso->gotoLigCol(POSLIGNE+16, POSCOL);
+    std::cout << "If the player chooses to MOVE, he will first select a ship, then a direction to move in.";
 }
 
 //Method partly inspired by last year's Snoopy Project - Axel CANTE / Juliette HEUANGTHEP
 void Game::playMenu(Console* conso)
 {
-    initializeBoard();
     int menu_choice = 1;
     bool quit_game = false; //Bool that will decide whether or not to quit the game
     displayMenu(conso);
@@ -286,6 +304,9 @@ void Game::playMenu(Console* conso)
 
             if(menu_choice == 1 && key == 13) //start the game
             {
+                initializeBoard(true);
+                m_player_1.initializeBoats();
+                m_player_2.initializeBoats();
                 system("cls");
                 playGame(conso);
             }
@@ -365,7 +386,7 @@ void Game::playGame(Console* conso) //Function that will play the game
                 std::cout << "                 ";
                 conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
                 std::cout << "2. Move a ship";
-                //move a boat
+                ///move a boat here
             } else if(command == "1")
             {
                 conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
@@ -400,8 +421,7 @@ void Game::playGame(Console* conso) //Function that will play the game
                 } while (command_int < 1 || command_int > 15);
 
                 //this is where the player's command is treated by the game. Once this is done, the turn is passed
-//                if(player_number == 1) playerCommand(conso, m_player_1, command_char, command_int);
-//                    else playerCommand(conso, m_player_2, command_char, command_int);
+
                 if(player_number == 1)
                 {
                     m_player_1.setShotsFired(command_int-1, convert(command_char), 219);

@@ -34,7 +34,9 @@ public:
 
     ///Methods related to the game board
     //Method that will intialize the board (empty)
-    void initializeBoard();
+    void initializeBoard(bool firstTime);
+    //Method that will fill the game board with the relevant player's ships
+    void fillPlayerBoard(Player player);
     //Method that will display and update the game board depending on the player and actions taken before (movements, shots...)
     void displayBoard(Console* conso, Player player);
     //Method that will display current player information on the side of the game board

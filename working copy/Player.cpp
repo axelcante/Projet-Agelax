@@ -2,16 +2,14 @@
 #include <iostream>
 
 //Default constructor
-Player::Player()
-{
-    initializeBoats();
-}
+Player::Player() {}
 
 //Overloaded constructor
 Player::Player(int playerNumber, bool isLost)
 {
     m_isLost = isLost;
     m_player_number = playerNumber;
+    initializeBoats();
 }
 
 //Destructor

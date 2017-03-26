@@ -37,10 +37,16 @@
 		<Unit filename="Boat.cpp" />
 		<Unit filename="Boat.h" />
 		<Unit filename="Constantes.h" />
+		<Unit filename="Cruiser.cpp" />
+		<Unit filename="Cruiser.h" />
+		<Unit filename="Destroyer.cpp" />
+		<Unit filename="Destroyer.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
+		<Unit filename="Submarine.cpp" />
+		<Unit filename="Submarine.h" />
 		<Unit filename="console.cpp" />
 		<Unit filename="console.h" />
 		<Unit filename="main.cpp" />
