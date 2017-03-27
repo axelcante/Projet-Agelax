@@ -1,19 +1,27 @@
 # depslib dependency file v1.0
-1490455169 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
+1490629300 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
 	"Game.h"
 	<string.h>
 
-1490455156 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
+1490569787 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.h
 	"Player.h"
 	"console.h"
+
+1490567814 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
 	"Constantes.h"
+	<time.h>
+	<stdlib.h>
+	<vector>
+	"Boat.h"
+	"Battleship.h"
+	"Cruiser.h"
+	"Destroyer.h"
+	"Submarine.h"
 
-1490187022 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.h
-
-1489850489 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.cpp
+1489854089 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.cpp
 	"console.h"
 
-1490126057 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.h
+1490129657 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\console.h
 	<windows.h>
 	<stdlib.h>
 	<conio.h>
@@ -23,15 +31,18 @@
 	<fstream>
 	<istream>
 
-1489855018 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
+1490628934 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
 	"Player.h"
+	<iostream>
 
-1490130881 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\constantes.h
+1490569168 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\constantes.h
+	<iostream>
 
-1490127070 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\main.cpp
+1490611584 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\main.cpp
 	<iostream>
 	<windows.h>
 	<vector>
+	<time.h>
 	"console.h"
 	"Game.h"
 
@@ -96,12 +107,12 @@
 
 1489869434 "
 
-1490447210 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
-	"Boat.h"
-	"Boat.h"
+1490625753 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
 	"Boat.h"
 
-1490447210 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+1490625755 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+	"Constantes.h"
+	<vector>
 
 1490457499 fa44eda19098c20d67a75a5b0539f3f49b6bb
 	"Constantes.h"
@@ -109,12 +120,13 @@
 
 1489869275 839e5cf4129a28dd1b039f744afad707a0182
 
-1490447210 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.cpp
+1490541227 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.cpp
 	"Battleship.h"
 
-1490447210 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.h
+1490541227 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\battleship.h
 	"Constantes.h"
 	"Boat.h"
+	<vector>
 
 1490130881 s.h"
 
@@ -202,5 +214,26 @@
 	"Boat.h"
 
 1490547586 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\submarine.cpp
+	"Submarine.h"
+
+1490564595 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\cruiser.h
+	"Constantes.h"
+	"Boat.h"
+
+1490564595 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\destroyer.h
+	"Constantes.h"
+	"Boat.h"
+
+1490564595 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\submarine.h
+	"Constantes.h"
+	"Boat.h"
+
+1490564595 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\cruiser.cpp
+	"Cruiser.h"
+
+1490564595 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\destroyer.cpp
+	"Destroyer.h"
+
+1490564595 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\submarine.cpp
 	"Submarine.h"
 
