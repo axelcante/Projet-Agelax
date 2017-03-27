@@ -549,6 +549,8 @@ void Game::playGame(Console* conso) //Function that will play the game
                 }
                 conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
                 endturn = true;
+
+
             }
         }
     }

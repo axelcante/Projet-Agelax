@@ -119,7 +119,7 @@ void Player::initializeBoats()
             switch(dir)
             {
                case UP:
-                if(pos_j-m_boats[i].get_length()>=-1){   //Checking for conflicts with the board's limits
+                if(pos_j-m_boats[i].get_length()<-1){   //Checking for conflicts with the board's limits
                     gud=false;
                     break;
                 }
@@ -167,7 +167,7 @@ void Player::initializeBoats()
                 break;
 
             case LEFT:
-                if(pos_i-BATTLESHIP_LENGTH>=-1){   //Checking for conflicts with the board's limits
+                if(pos_i-BATTLESHIP_LENGTH<-1){   //Checking for conflicts with the board's limits
                     gud=false;
                     break;
                 }

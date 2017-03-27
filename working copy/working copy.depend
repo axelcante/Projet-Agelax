@@ -49,18 +49,18 @@
 1490443559 D
 	<vector>
 
-1490543742 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.cpp
+1490631500 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.cpp
 	"Game.h"
 	<string.h>
 
 1490443431 ad00341ac0b3496b54a766749f556baed70f1
 	"Game.h"
 
-1490543832 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.h
+1490631500 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\game.h
 	"Player.h"
 	"console.h"
 
-1490547648 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.h
+1490631500 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.h
 	"Constantes.h"
 	<time.h>
 	<stdlib.h>
@@ -81,24 +81,25 @@
 	<fstream>
 	<istream>
 
-1490548759 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\constantes.h
+1490631500 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\constantes.h
 	<iostream>
 
-1490544407 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\main.cpp
+1490631500 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\main.cpp
 	<iostream>
 	<windows.h>
 	<vector>
+	<time.h>
 	"console.h"
 	"Game.h"
 
-1490561622 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.cpp
+1490631841 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.cpp
 	"Player.h"
 	<iostream>
 
 1490561717 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.cpp
 	"Boat.h"
 
-1490561717 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.h
+1490563244 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.h
 	"Constantes.h"
 	<vector>
 
