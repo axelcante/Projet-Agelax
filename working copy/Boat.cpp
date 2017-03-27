@@ -74,8 +74,6 @@ bool Boat::rotate_boat(int dir)
     else{ return false; } //if the move is useless the return is false
 }
 
-/// TRANSITION AVC BOAT ////////////////////////////////////////
-
 //Is the boat hit on the specified case?
 bool Boat::isHit(int pos_i, int pos_j)
 {

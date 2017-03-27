@@ -44,8 +44,6 @@ public:
     bool move_boat(int dir);
     //Rotates the boat 90 degrees in the specified direction (if possible)
     bool rotate_boat(int dir);
-
-    ///Transition avec boat
     //Is the boat hit by an enemy shell? If yes then set that spot as hit on the hit map
     bool isHit(int pos_i, int pos_j);
     //Is the boat on that specified spot? If yes return true (used for conflict testing)
