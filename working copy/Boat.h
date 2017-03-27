@@ -17,11 +17,8 @@ public:
     int m_dir;   //Direction the boat is facing
     int m_hit_count; //Number of times the boat was hit
     bool m_isPlaced;
-
-    ///Transition avec boat
     int m_length; //The lenght of the boat
     std::vector<bool> m_hit_map;//Keeps track of where the boat is hit
-    ///
 
     //Default constructor
     Boat();
@@ -34,7 +31,6 @@ public:
     void set_pos_i(int i);
     void set_pos_j(int j);
     void set_dir(int dir);
-    void set_isPlaced(bool isPlaced);
 
     //Getters
     int get_pos_i();
