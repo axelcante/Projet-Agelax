@@ -27,13 +27,122 @@ void Game::fillPlayerBoard(Player player)
 {
     for (int i = 0; i < NUMBER_OF_BOATS; i++)
     {
-        m_board_player[player.m_boats[i].m_pos_i][player.m_boats[i].m_pos_j] = 'B';
+        switch(i)
+        {
+        case 0:
+            m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 'B';
+            switch(player.m_boats[i].m_dir)
+            {
+            case UP:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 'B';
+                }
+                break;
+            case RIGHT:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 'B';
+                }
+                break;
+            case DOWN:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 'B';
+                }
+                break;
+            case LEFT:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 'B';
+                }
+                break;
+            }
+            break;
+        case 1:
+        case 2:
+            m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 'C';
+            switch(player.m_boats[i].m_dir)
+            {
+            case UP:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 'C';
+                }
+                break;
+            case RIGHT:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 'C';
+                }
+                break;
+            case DOWN:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 'C';
+                }
+                break;
+            case LEFT:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 'C';
+                }
+                break;
+            }
+            break;
+        case 3:
+        case 4:
+        case 5:
+            m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 'D';
+            switch(player.m_boats[i].m_dir)
+            {
+            case UP:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 'D';
+                }
+                break;
+            case RIGHT:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 'D';
+                }
+                break;
+            case DOWN:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 'D';
+                }
+                break;
+            case LEFT:
+                for(int j = 0; j < player.m_boats[i].m_length; j++)
+                {
+                    m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 'D';
+                }
+                break;
+            }
+            break;
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 'S';
+            break;
+        }
+//        system("cls");
+//        std::cout << m_player_1.m_boats[i].m_pos_i;
+//        std::cout << m_player_2.m_boats[i].m_pos_i;
+//        system("pause");
     }
 }
 
 //Method partly inspired by last year's Snoopy project - Axel CANTE / Juliette HEUANGTHEP
 void Game::displayBoard(Console* conso, Player player)
 {
+    for(int i = 0; i < NUMBER_OF_BOATS; i++)
+    {
+        conso->gotoLigCol(POSLIGNE+18+i, POSCOL); std::cout << m_player_1.m_boats[i].m_dir << "  " << m_player_1.m_boats[i].m_pos_i+1 << "  " << m_player_1.m_boats[i].m_pos_j+1;
+    }
     conso->setColor(COLOR_DEFAULT);
     int lines = 0;
     initializeBoard(false);
@@ -259,7 +368,9 @@ void Game::displayTutorial(Console* conso)
     system("CLS");
     conso->setColor(COLOR_DEFAULT);
     conso->gotoLigCol(POSLIGNE, POSCOL);
+    conso->setColor(COLOR_YELLOW);
     std::cout << "BATTLESHIPS - TUTORIAL";
+    conso->setColor(COLOR_DEFAULT);
     conso->gotoLigCol(POSLIGNE+4, POSCOL);
     std::cout << "This is a modern Battleships game.";
     conso->gotoLigCol(POSLIGNE+6, POSCOL);
@@ -328,6 +439,11 @@ void Game::playMenu(Console* conso)
             if(menu_choice == 3 && key == 13) //show tutorial
             {
                 displayTutorial(conso);
+                conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
+                system("cls");
+                displayMenu(conso);
+                menu_choice = 1;
+                styleMenu(menu_choice, conso);
             }
         }
     }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490569956 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
+1490629300 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\game.cpp
 	"Game.h"
 	<string.h>
 
@@ -31,17 +31,18 @@
 	<fstream>
 	<istream>
 
-1490565118 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
+1490628934 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\player.cpp
 	"Player.h"
 	<iostream>
 
 1490569168 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\constantes.h
 	<iostream>
 
-1490564595 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\main.cpp
+1490611584 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\main.cpp
 	<iostream>
 	<windows.h>
 	<vector>
+	<time.h>
 	"console.h"
 	"Game.h"
 
@@ -106,10 +107,10 @@
 
 1489869434 "
 
-1490564595 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
+1490625753 source:c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.cpp
 	"Boat.h"
 
-1490564595 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
+1490625755 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\boat.h
 	"Constantes.h"
 	<vector>
 

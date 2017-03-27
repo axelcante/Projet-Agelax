@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <vector>
+#include <time.h>
 #include "console.h"
 #include "Game.h"
 
@@ -8,6 +9,7 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL)); //Initialize random function
     console con(190, 70);
     ///La partie du code lie a la gestion de la console a entierement ete cree par Mr Diedler, dans le cadre du cours de C++ ING2
     //Creation du pointeur conso pour gerer la console
