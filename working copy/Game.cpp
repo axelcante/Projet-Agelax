@@ -454,7 +454,6 @@ void Game::playGame(Console* conso) //Function that will play the game
     system("cls");
 
     int player_number = 2;
-    int info_case = 1;
     std::string command;
     char command_char;
     int command_int;
@@ -540,11 +539,15 @@ void Game::playGame(Console* conso) //Function that will play the game
 
                 if(player_number == 1)
                 {
-                    m_player_1.setShotsFired(command_int-1, convert(command_char), 219);
+                    if(shotHasTouched(m_player_1, convert(command_char), command_int-1))
+                        m_player_1.setShotsFired(command_int-1, convert(command_char), 219);
+                    else m_player_1.setShotsFired(command_int-1, convert(command_char), 177);
                     displayBoard(conso, m_player_1);
                 } else
                 {
-                    m_player_2.setShotsFired(command_int-1, convert(command_char), 219);
+                    if(shotHasTouched(m_player_2, convert(command_char), command_int-1))
+                        m_player_2.setShotsFired(command_int-1, convert(command_char), 219);
+                    else m_player_2.setShotsFired(command_int-1, convert(command_char), 177);
                     displayBoard(conso, m_player_2);
                 }
                 conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
@@ -556,6 +559,7 @@ void Game::playGame(Console* conso) //Function that will play the game
     }
 }
 
+//Method that will convert a character input into an int (for the shooting function)
 int Game::convert(char a)
 {
     int integer = 0;
@@ -579,7 +583,24 @@ int Game::convert(char a)
     return integer;
 }
 
-
+////Method that will test whether or not a player's shot has touched the opponent's boat
+bool Game::shotHasTouched(Player player, int pos_i, int pos_j) {
+    if(player.getPlayer_number() == 1) {
+        for(int i = 0; i < NUMBER_OF_BOATS; i++) {
+            if(m_player_2.m_boats[i].isOnThatSpot(pos_i, pos_j)) {return true; system("pause");}
+                else return false;
+        }
+    } else if(player.getPlayer_number() == 2) {
+        for(int j = 0; j < NUMBER_OF_BOATS; j++) {
+            if(m_player_1.m_boats[j].isOnThatSpot(pos_i, pos_j)) {return true; system("pause");}
+                else return false;
+        }
+    }
+    system("cls");
+    std::cout << "bug";
+    system("pause");
+    return false;
+}
 
 
 ///Method unused for the moment
