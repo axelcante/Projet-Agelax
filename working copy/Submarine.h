@@ -12,7 +12,7 @@ private:
 public:
     //Constructor and destructor
     Submarine();
-    Submarine(int pos_i, int pos_j, int dir, int hit_count, int length);
+    Submarine(int pos_i, int pos_j, int dir, int hit_count, int length, std::string id);
     ~Submarine();
 
 };

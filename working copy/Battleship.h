@@ -16,7 +16,7 @@ private:
 public:
     //Constructor
     Battleship();
-    Battleship(int pos_i, int pos_j, int dir, int hit_count, int length);
+    Battleship(int pos_i, int pos_j, int dir, int hit_count, int length, std::string id);
     ~Battleship();
 //    //Is the boat hit by an enemy shell? If yes then set that spot as hit on the hit map
 //    bool isHit(int pos_i, int pos_j);

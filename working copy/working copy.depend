@@ -60,7 +60,7 @@
 	"Player.h"
 	"console.h"
 
-1490631500 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.h
+1490732854 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.h
 	"Constantes.h"
 	<time.h>
 	<stdlib.h>
@@ -92,14 +92,14 @@
 	"console.h"
 	"Game.h"
 
-1490631841 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.cpp
+1490738285 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\player.cpp
 	"Player.h"
 	<iostream>
 
-1490561717 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.cpp
+1490736356 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.cpp
 	"Boat.h"
 
-1490563244 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.h
+1490731533 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\boat.h
 	"Constantes.h"
 	<vector>
 
@@ -131,10 +131,10 @@
 
 1490130881 s.h"
 
-1490474462 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.cpp
+1490731881 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.cpp
 	"Battleship.h"
 
-1490474462 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.h
+1490731881 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\battleship.h
 	"Constantes.h"
 	"Boat.h"
 	<vector>
@@ -196,25 +196,25 @@
 
 1490457499 
 
-1490547586 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\cruiser.cpp
+1490731881 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\cruiser.cpp
 	"Cruiser.h"
 
-1490547586 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\cruiser.h
+1490731881 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\cruiser.h
 	"Constantes.h"
 	"Boat.h"
 
-1490547586 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\destroyer.cpp
+1490731881 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\destroyer.cpp
 	"Destroyer.h"
 
-1490547586 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\destroyer.h
+1490731881 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\destroyer.h
 	"Constantes.h"
 	"Boat.h"
 
-1490547586 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\submarine.h
+1490731881 c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\submarine.h
 	"Constantes.h"
 	"Boat.h"
 
-1490547586 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\submarine.cpp
+1490731881 source:c:\users\eliott\onedrive\cours ece s6 2017\projet poo\projet agelax\working copy\submarine.cpp
 	"Submarine.h"
 
 1490564595 c:\users\utilisateur\dropbox\ing3\mini projet\projet agelax\working copy\cruiser.h
