@@ -29,8 +29,10 @@ public:
     void displayTutorial(Console* conso);
     //Method that will allow the player to navigate the menu and decide which action to take
     void playMenu(Console* conso);
+
+    ///This is the main function of the game, that will allow players to actually play the game!
     //Method that will allow players to play Battleships
-    void playGame(Console* conso); ///For now, not used
+    void playGame(Console* conso);
 
     ///Methods related to the game board
     //Method that will intialize the board (empty)
@@ -43,6 +45,10 @@ public:
     void displayInfo(Console* conso, int player_number);
     //Method that will convert a char into a relevant int
     int convert(char a);
+    //Method that will test if the opponent's ship is touched; if so, colors the shot in red
+    bool shotHasTouched(Player player, int pos_i, int pos_j);
+    //Method that will detect if all boats are dead; if so, end the game and display which player has won
+    bool endGame(Console* conso, Player player);
 
     ///Method unused for the moment
     //Method that will recieve the player's command and treat it accordingly

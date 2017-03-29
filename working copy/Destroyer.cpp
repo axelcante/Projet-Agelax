@@ -3,11 +3,6 @@
 //Constructor
 Destroyer::Destroyer(): Boat()
 {
-    for(int i=0; i<DESTROYER_LENGTH; i++)
-    {
-        bool b= false;
-        m_hit_map.push_back(b);
-    }
 }
 
 Destroyer::Destroyer(int pos_i, int pos_j, int dir, int hit_count, int length)
@@ -17,6 +12,11 @@ Destroyer::Destroyer(int pos_i, int pos_j, int dir, int hit_count, int length)
   m_dir = dir;
   m_hit_count = hit_count;
   m_length = length;
+  for(int i=0; i<DESTROYER_LENGTH; i++)
+    {
+        bool b= false;
+        m_hit_map.push_back(b);
+    }
 }
 //Destructor
 Destroyer::~Destroyer()

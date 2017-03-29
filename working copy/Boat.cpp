@@ -1,4 +1,5 @@
 #include "Boat.h"
+#include <windows.h>
 
 //Default constructor
 Boat::Boat(){}
@@ -11,6 +12,9 @@ Boat::Boat(int pos_i, int pos_j, int dir, int hit_count, int length)
   m_dir = dir;
   m_hit_count = hit_count;
   m_length = length;
+  for(int i = 0; i < length; i++){
+      m_hit_map.push_back(false);
+  }
 }
 
 // Destructor
@@ -30,7 +34,10 @@ int Boat::get_length() { return m_length; }
 //Add one to the hit counter
 void Boat::add_hit()
 {
-    m_hit_count++;
+    if(m_hit_count < m_length)
+    {
+        m_hit_count++;
+    }
 }
 
 //Moves the boat one case in the specified direction (collision verification done in Game class)
@@ -161,7 +168,7 @@ bool Boat::isHit(int pos_i, int pos_j)
     }
 }
 
-//Is the boat on that specified spot? If yes return true (used for conflict testing)
+//Is the boat on that specified spot? If yes return true (used for conflict testing and for the shooting mechanic)
 bool Boat::isOnThatSpot(int pos_i, int pos_j)
 {
     switch(m_dir)

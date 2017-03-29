@@ -2,13 +2,7 @@
 
 //Constructor
 Battleship::Battleship(): Boat()
-{
-    for(int i=0; i<BATTLESHIP_LENGTH; i++)
-    {
-        bool b= false;
-        m_hit_map.push_back(b);
-    }
-}
+{}
 
 Battleship::Battleship(int pos_i, int pos_j, int dir, int hit_count, int length)
 {
@@ -17,6 +11,11 @@ Battleship::Battleship(int pos_i, int pos_j, int dir, int hit_count, int length)
   m_dir = dir;
   m_hit_count = hit_count;
   m_length = length;
+  for(int i=0; i<BATTLESHIP_LENGTH; i++)
+    {
+        bool b= false;
+        m_hit_map.push_back(b);
+    }
 }
 //Destructor
 Battleship::~Battleship()

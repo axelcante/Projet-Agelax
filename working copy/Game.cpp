@@ -22,39 +22,46 @@ void Game::initializeBoard(bool firstTime)
     }
 }
 
-//Method that will the m_board_player board with the correct ships
+//Method that will display the m_board_player board with the correct ships
 void Game::fillPlayerBoard(Player player)
 {
-    for (int i = 0; i < NUMBER_OF_BOATS; i++)
+    for (int i = 0; i < NUMBER_OF_BOATS; i++)   //Go through each of a player's boat positions
     {
         switch(i)
         {
         case 0:
-            m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 'B';
             switch(player.m_boats[i].m_dir)
             {
             case UP:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 'B';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 219;
                 }
                 break;
             case RIGHT:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 'B';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 219;
                 }
                 break;
             case DOWN:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 'B';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 219;
                 }
                 break;
             case LEFT:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 'B';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 219;
                 }
                 break;
             }
@@ -68,24 +75,32 @@ void Game::fillPlayerBoard(Player player)
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 'C';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 219;
                 }
                 break;
             case RIGHT:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 'C';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 219;
                 }
                 break;
             case DOWN:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 'C';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 219;
                 }
                 break;
             case LEFT:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 'C';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 219;
                 }
                 break;
             }
@@ -100,24 +115,32 @@ void Game::fillPlayerBoard(Player player)
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 'D';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j-j][player.m_boats[i].m_pos_i] = 219;
                 }
                 break;
             case RIGHT:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 'D';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i+j] = 219;
                 }
                 break;
             case DOWN:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 'D';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j+j][player.m_boats[i].m_pos_i] = 219;
                 }
                 break;
             case LEFT:
                 for(int j = 0; j < player.m_boats[i].m_length; j++)
                 {
                     m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 'D';
+                    if(player.m_boats[i].m_hit_map[j] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i-j] = 219;
                 }
                 break;
             }
@@ -127,6 +150,8 @@ void Game::fillPlayerBoard(Player player)
         case 8:
         case 9:
             m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 'S';
+            if(player.m_boats[i].m_hit_map[0] == true)
+                        m_board_player[player.m_boats[i].m_pos_j][player.m_boats[i].m_pos_i] = 219;
             break;
         }
 //        system("cls");
@@ -454,7 +479,6 @@ void Game::playGame(Console* conso) //Function that will play the game
     system("cls");
 
     int player_number = 2;
-    int info_case = 1;
     std::string command;
     char command_char;
     int command_int;
@@ -468,11 +492,11 @@ void Game::playGame(Console* conso) //Function that will play the game
             system("cls");
             endturn = false;
 
-            //Changement de joueur
+            //Pass a player's turn
             if(player_number == 1) player_number = 2;
                 else player_number = 1;
 
-            //Afficher le joueur correspondant
+            //Display corresponding player
             if(player_number == 1) displayBoard(conso, m_player_1);
                 else displayBoard(conso, m_player_2);
 
@@ -502,7 +526,7 @@ void Game::playGame(Console* conso) //Function that will play the game
                 std::cout << "                 ";
                 conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
                 std::cout << "2. Move a ship";
-                ///move a boat here
+                //move a boat here
             } else if(command == "1")
             {
                 conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
@@ -540,22 +564,43 @@ void Game::playGame(Console* conso) //Function that will play the game
 
                 if(player_number == 1)
                 {
-                    m_player_1.setShotsFired(command_int-1, convert(command_char), 219);
+                    if(shotHasTouched(m_player_1, convert(command_char), command_int-1))
+                        m_player_1.setShotsFired(command_int-1, convert(command_char), 219);
+                    else m_player_1.setShotsFired(command_int-1, convert(command_char), 177);
                     displayBoard(conso, m_player_1);
                 } else
                 {
-                    m_player_2.setShotsFired(command_int-1, convert(command_char), 219);
+                    if(shotHasTouched(m_player_2, convert(command_char), command_int-1))
+                        m_player_2.setShotsFired(command_int-1, convert(command_char), 219);
+                    else m_player_2.setShotsFired(command_int-1, convert(command_char), 177);
                     displayBoard(conso, m_player_2);
                 }
                 conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
+
+//                for(int i = 0; i < NUMBER_OF_BOATS; i++)
+//                {
+//                    m_player_1.m_boats[i].m_hit_count = m_player_1.m_boats[i].m_length;
+//                }
+
+                if(endGame(conso, m_player_1)) {            //Tests if player 1 has lost the game
+                    quit = true;
+                    system("cls");
+                    displayMenu(conso);
+                    styleMenu(1, conso);
+                }
+                if(endGame(conso, m_player_2)) {            //Tests if player 2 has lost the game
+                    quit = true;
+                    system("cls");
+                    displayMenu(conso);
+                    styleMenu(1, conso);
+                }
                 endturn = true;
-
-
             }
         }
     }
 }
 
+//Method that will convert a character input into an int (for the shooting function)
 int Game::convert(char a)
 {
     int integer = 0;
@@ -579,14 +624,48 @@ int Game::convert(char a)
     return integer;
 }
 
+////Method that will test whether or not a player's shot has touched the opponent's boat
+bool Game::shotHasTouched(Player player, int pos_i, int pos_j) {
+    if(player.getPlayer_number() == 1) {
+        for(int i = 0; i < NUMBER_OF_BOATS; i++) {          //Every time a player shoots, test whether or not a all of the boats are hit
+            if(m_player_2.m_boats[i].isOnThatSpot(pos_i, pos_j)) {
+                    if(m_player_2.m_boats[i].isHit(pos_i, pos_j)) {         //Change the boat hitmap accordingly
+                        m_player_2.m_boats[i].add_hit();
+                        return true;
+                    }
+            }     //If a boat is detected, return true
+        }
+    } else if(player.getPlayer_number() == 2) {
+        for(int j = 0; j < NUMBER_OF_BOATS; j++) {
+            if(m_player_1.m_boats[j].isOnThatSpot(pos_i, pos_j)) {
+                    if(m_player_1.m_boats[j].isHit(pos_i, pos_j)) {
+                        m_player_1.m_boats[j].add_hit();
+                        return true;
+                    }
+            }
+        }
+    }
+    return false;
+}
 
-
-
-///Method unused for the moment
-//void Game::playerCommand(Console* conso, Player player, char command_char, int command_int)
-//{
-//    int converted_command_char = 0;
-//    converted_command_char = convert(command_char);;
-//    player.setShotsFired(command_int-1, converted_command_char, 219);
-//    displayBoard(conso, player);
-//}
+///Method that will detect if the game is lost; if so, display the winning player and return to menu
+bool Game::endGame(Console* conso, Player player)
+{
+    int dead_boat_counter = 0;
+    for(int i = 0; i < NUMBER_OF_BOATS; i++)
+    {
+        if(player.m_boats[i].isDead()) dead_boat_counter++;
+    }
+    if(dead_boat_counter == NUMBER_OF_BOATS)            //If the amount of dead ships is equal to the total amount of boats, the game is lost
+    {
+        system("cls");
+        conso->gotoLigCol(POSLIGNE, POSCOL);
+        if(player.getPlayer_number() == 1)
+            std::cout << "Player 2 has won the game!";
+            else std::cout << "Player 1 has won the game!";
+        conso->gotoLigCol(POSLIGNE*4, POSCOL);
+        system("pause");
+        return true;
+    }
+    else return false;
+}
