@@ -237,7 +237,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i, pos_j-length)){  //If another boat is on that spot
-                    gud= false;
+                    //gud=false;
                     break;
                 }
             }
@@ -249,7 +249,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i, pos_j-1)){  //If another boat is on that spot
-                    gud= false;
+                    //gud=false;
                     break;
                 }
             }
@@ -268,7 +268,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i+length, pos_j)){  //If another boat is on that spot
-                    gud= false;
+                    //gud=false;
                     break;
                 }
             }
@@ -280,7 +280,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i+1, pos_j)){  //If another boat is on that spot
-                    gud= false;
+                    //gud=false;
                     break;
                 }
             }
@@ -299,7 +299,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i, pos_j+length)){  //If another boat is on that spot
-                    gud= false;
+                    //gud=false;
                     break;
                 }
             }
@@ -312,9 +312,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i, pos_j+1)){  //If another boat is on that spot
-                    gud= false;
-                    ///return false?
-
+                    //gud=false;
                     break;
                 }
             }
@@ -323,6 +321,7 @@ bool Player::moveBoat(std::string id, int dir)
             gud= false;
             break;
         }
+        break;
 
     case LEFT:
         if(m_boats[b].m_dir==LEFT){ //If the boat is facing the same direction as the movement
@@ -332,7 +331,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i-length, pos_j)){  //If another boat is on that spot
-                    gud= false;
+                    //gud=false;
                     break;
                 }
             }
@@ -344,9 +343,7 @@ bool Player::moveBoat(std::string id, int dir)
             }
             for(int i=0; i<(int)m_boats.size(); i++){  //For every boat
                 if(m_boats[i].isOnThatSpot(pos_i-1, pos_j)){  //If another boat is on that spot
-                    gud= false;
-                    ///return false?
-
+                    //gud=false;
                     break;
                 }
             }
@@ -355,9 +352,11 @@ bool Player::moveBoat(std::string id, int dir)
             gud= false;
             break;
         }
+        break;
     }
+
     if(gud){
-        if(!m_boats[b].move_boat(dir)){ return false;}
+        m_boats[b].move_boat(dir);
         return true;
     }
 

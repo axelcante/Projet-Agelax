@@ -501,7 +501,30 @@ void Game::playGame(Console* conso) //Function that will play the game
                 std::cout << "                 ";
                 conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
                 std::cout << "2. Move a ship";
-                ///move a boat here
+                ///move a boat here /////////////////////////////////////////////////////////////
+                if(player_number == 1)
+                {
+                    std::string cmd; int dir;
+                    std::cin >> cmd; std::cin >> dir;
+
+                    m_player_1.moveBoat(cmd, dir);
+                    displayBoard(conso, m_player_1);
+                    conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
+                    endturn = true;
+
+                }
+                if(player_number == 2)
+                {
+                    std::string cmd; int dir;
+                    std::cin >> cmd; std::cin >> dir;
+
+                    m_player_2.moveBoat(cmd, dir);
+                    displayBoard(conso, m_player_2);
+                    conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
+                    endturn = true;
+
+                }
+                /// ///////////////////////////////////////////////////////////////////////////////
             } else if(command == "1")
             {
                 conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
