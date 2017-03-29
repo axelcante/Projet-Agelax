@@ -47,8 +47,11 @@ public:
     int convert(char a);
     //Method that will test if the opponent's ship is touched; if so, colors the shot in red
     bool shotHasTouched(Player player, int pos_i, int pos_j);
+<<<<<<< HEAD
     //Method that will detect if all boats are dead; if so, end the game and display which player has won
     bool endGame(Console* conso, Player player);
+=======
+>>>>>>> c6441eff19eea56c54131c5c3ebcaace8591b87c
 
     ///Method unused for the moment
     //Method that will recieve the player's command and treat it accordingly
@@ -56,3 +59,4 @@ public:
 };
 
 #endif // GAME_H_INCLUDED
+

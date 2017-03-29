@@ -19,11 +19,12 @@ public:
     bool m_isPlaced;
     int m_length; //The lenght of the boat
     std::vector<bool> m_hit_map;//Keeps track of where the boat is hit
+    std::string m_id;
 
     //Default constructor
     Boat();
     //Overloaded constructor
-    Boat(int pos_i, int pos_j, int dir, int hit_count, int length);
+    Boat(int pos_i, int pos_j, int dir, int hit_count, int length, std::string id);
     //Destructor
     ~Boat();
 
@@ -50,8 +51,6 @@ public:
     bool isOnThatSpot(int pos_i, int pos_j);
     //Is the boat dead?
     bool isDead();
-
-
 };
 
 

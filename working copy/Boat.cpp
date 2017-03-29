@@ -5,16 +5,20 @@
 Boat::Boat(){}
 
 //Overloaded constructor
-Boat::Boat(int pos_i, int pos_j, int dir, int hit_count, int length)
+Boat::Boat(int pos_i, int pos_j, int dir, int hit_count, int length, std::string id)
 {
   m_pos_i = pos_i;
   m_pos_j = pos_j;
   m_dir = dir;
   m_hit_count = hit_count;
   m_length = length;
+<<<<<<< HEAD
   for(int i = 0; i < length; i++){
       m_hit_map.push_back(false);
   }
+=======
+  m_id = id;
+>>>>>>> c6441eff19eea56c54131c5c3ebcaace8591b87c
 }
 
 // Destructor
@@ -48,20 +52,24 @@ bool Boat::move_boat(int dir)
     switch(dir)
     {
     case UP:
-        if(m_dir==(UP || DOWN)) { m_pos_j--; return true; } //returns true is all went well
-        else return false; //returns false if the boat is not corectly aligned with the specified direction
+        //if(m_dir==(UP || DOWN))
+            { m_pos_j--; return true; } //returns true is all went well
+        //else return false; //returns false if the boat is not corectly aligned with the specified direction
         break;
     case RIGHT:
-        if(m_dir==(RIGHT || LEFT)) { m_pos_i++; return true; }
-        else return false;
+        //if(m_dir==(RIGHT || LEFT))
+            { m_pos_i++; return true; }
+        //else return false;
         break;
     case DOWN:
-        if(m_dir==(UP || DOWN)) { m_pos_j++; return true; }
-        else return false;
+        //if(m_dir==(UP || DOWN))
+            { m_pos_j++; return true; }
+        //else return false;
         break;
     case LEFT:
-        if(m_dir==(RIGHT || LEFT)) { m_pos_i--; return true; }
-        else return false;
+        //if(m_dir==(RIGHT || LEFT))
+            { m_pos_i--; return true; }
+        //else return false;
         break;
     default:
         return false;

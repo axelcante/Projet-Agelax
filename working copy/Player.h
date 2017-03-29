@@ -43,6 +43,9 @@ class Player
         ///Methods
         //Method that randomly places the boats
         void initializeBoats();
+        //Makes sure the specified move is possible
+        bool moveBoat(std::string id, int dir);
+
 
     };
 

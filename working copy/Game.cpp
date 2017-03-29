@@ -526,7 +526,34 @@ void Game::playGame(Console* conso) //Function that will play the game
                 std::cout << "                 ";
                 conso->gotoLigCol(POSLIGNE*2.75, POSCOL*9.2);
                 std::cout << "2. Move a ship";
+<<<<<<< HEAD
                 //move a boat here
+=======
+                ///move a boat here /////////////////////////////////////////////////////////////
+                if(player_number == 1)
+                {
+                    std::string cmd; int dir;
+                    std::cin >> cmd; std::cin >> dir;
+
+                    m_player_1.moveBoat(cmd, dir);
+                    displayBoard(conso, m_player_1);
+                    conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
+                    endturn = true;
+
+                }
+                if(player_number == 2)
+                {
+                    std::string cmd; int dir;
+                    std::cin >> cmd; std::cin >> dir;
+
+                    m_player_2.moveBoat(cmd, dir);
+                    displayBoard(conso, m_player_2);
+                    conso->gotoLigCol(POSLIGNE+25, POSCOL); system("pause");
+                    endturn = true;
+
+                }
+                /// ///////////////////////////////////////////////////////////////////////////////
+>>>>>>> c6441eff19eea56c54131c5c3ebcaace8591b87c
             } else if(command == "1")
             {
                 conso->gotoLigCol(POSLIGNE*2.5, POSCOL*9.2);
@@ -627,6 +654,7 @@ int Game::convert(char a)
 ////Method that will test whether or not a player's shot has touched the opponent's boat
 bool Game::shotHasTouched(Player player, int pos_i, int pos_j) {
     if(player.getPlayer_number() == 1) {
+<<<<<<< HEAD
         for(int i = 0; i < NUMBER_OF_BOATS; i++) {          //Every time a player shoots, test whether or not a all of the boats are hit
             if(m_player_2.m_boats[i].isOnThatSpot(pos_i, pos_j)) {
                     if(m_player_2.m_boats[i].isHit(pos_i, pos_j)) {         //Change the boat hitmap accordingly
@@ -669,3 +697,30 @@ bool Game::endGame(Console* conso, Player player)
     }
     else return false;
 }
+=======
+        for(int i = 0; i < NUMBER_OF_BOATS; i++) {
+            if(m_player_2.m_boats[i].isOnThatSpot(pos_i, pos_j)) {return true; system("pause");}
+                else return false;
+        }
+    } else if(player.getPlayer_number() == 2) {
+        for(int j = 0; j < NUMBER_OF_BOATS; j++) {
+            if(m_player_1.m_boats[j].isOnThatSpot(pos_i, pos_j)) {return true; system("pause");}
+                else return false;
+        }
+    }
+    system("cls");
+    std::cout << "bug";
+    system("pause");
+    return false;
+}
+
+
+///Method unused for the moment
+//void Game::playerCommand(Console* conso, Player player, char command_char, int command_int)
+//{
+//    int converted_command_char = 0;
+//    converted_command_char = convert(command_char);;
+//    player.setShotsFired(command_int-1, converted_command_char, 219);
+//    displayBoard(conso, player);
+//}
+>>>>>>> c6441eff19eea56c54131c5c3ebcaace8591b87c
